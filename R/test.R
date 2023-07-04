@@ -10,7 +10,7 @@ dsfrDependency <- function() {
   )
 }
 
-#' @exporta
+#' @export
 component <- function(name) {
   function(...) {
     shiny.react::reactElement(
@@ -23,4 +23,44 @@ component <- function(name) {
 }
 
 #' @export
-Button <- component("Button")
+Button <-   function(...) {
+    shiny.react::reactElement(
+      module = "Button",
+      name = "Button",
+      props = shiny.react::asProps(...),
+      deps = dsfrDependency()
+    )
+  }
+
+
+#' @export
+Accordion <- function(...) {
+    shiny.react::reactElement(
+      module = "Accordion",
+      name = "Accordion",
+      props = shiny.react::asProps(...),
+      deps = dsfrDependency()
+    )
+  }
+
+
+#' @export
+Badge <- function(...) {
+    shiny.react::reactElement(
+      module = "Badge",
+      name = "Badge",
+      props = shiny.react::asProps(...),
+      deps = dsfrDependency()
+    )
+  }
+
+
+#' @export
+Tag <- function(...) {
+    shiny.react::reactElement(
+      module = "Tag",
+      name = "Tag",
+      props = shiny.react::asProps(...),
+      deps = dsfrDependency()
+    )
+  }
